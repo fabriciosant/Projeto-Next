@@ -12,12 +12,16 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  Target,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
+import { Github } from "lucide-react"
+import { FaReact, FaJs } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 import {
   Sidebar,
   SidebarContent,
@@ -25,6 +29,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+
 
 // This is sample data.
 const data = {
@@ -35,103 +40,75 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      name: "NextJS",
+      logo: SiNextdotjs,
+      plan: "Desenvolvimento",
     },
     {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
+      name: "React",
+      logo: FaReact,
+      plan: "Desenvolvimento",
     },
     {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "Javascript",
+      logo: FaJs,
+      plan: "Desenvolvimento",
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Github",
       url: "#",
-      icon: SquareTerminal,
-      isActive: true,
+      icon: Github,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "NextJS",
+          url: "https://github.com/fabriciosant/Projeto-Next",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Ruby on Rails",
+          url: "https://github.com/fabriciosant/CulinarySuite",
         },
         {
-          title: "Settings",
-          url: "#",
+          title: "Javascript",
+          url: "https://github.com/fabriciosant/ping-pong",
         },
       ],
     },
     {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
+      title: "Documentações",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
-          url: "#",
+          title: "NextJS",
+          url: "https://nextjs.org/docs",
         },
         {
-          title: "Get Started",
-          url: "#",
+          title: "Ruby on Rails",
+          url: "https://gorails.com/setup/ubuntu/24.04",
         },
         {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
+          title: "Shadcn UI",
+          url: "https://ui.shadcn.com/docs",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Configurações",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Geral",
           url: "#",
         },
         {
-          title: "Team",
+          title: "Projetos",
           url: "#",
         },
         {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "Conta",
           url: "#",
         },
       ],

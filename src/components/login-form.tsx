@@ -8,8 +8,13 @@ import { FormEvent } from "react"
 import { signIn } from "next-auth/react"
 import Image from "next/image"
 import  logo  from '../../public/images/login.png'
+import { useSearchParams } from "next/navigation"
 
 export function LoginForm() {
+  const searchParams = useSearchParams()
+
+  const error = searchParams.get('error')
+
   async function login(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -19,10 +24,10 @@ export function LoginForm() {
       password: formData.get("password")
     }
 
-    // signIn("credentials", {
-    //   ...data,
-    //   callbackUrl: "/dashboard"
-    // })
+    signIn("credentials", {
+      ...data,
+      callbackUrl: "/dashboard"
+    })
   }
 
   return (
@@ -55,6 +60,7 @@ export function LoginForm() {
                 </div>
               </div>
               <Button type="submit" className="w-full">Login</Button>
+              {error === "CredentialsSignin" && (<div className="text-red-700 text-center">Credenciais inválidas!</div> )}
               <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
                 <span className="relative z-10 bg-background px-2 text-muted-foreground">
                   ou continue com

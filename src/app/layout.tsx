@@ -15,23 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-br" suppressHydrationWarning>
       <body className={`antialiased`}>
-      <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-          <SidebarProvider>
-            <AppSidebar />
-            <main>
-              <SidebarTrigger />
-              <ModeToggle />
-              {children}
-            </main>
-          </SidebarProvider>
-        </ThemeProvider>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );

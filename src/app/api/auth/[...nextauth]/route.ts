@@ -2,7 +2,9 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 
 const handler = NextAuth({
-
+  pages: {
+    signIn: "/"
+  },
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -10,7 +12,7 @@ const handler = NextAuth({
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         if(!credentials){
           return null
         }
