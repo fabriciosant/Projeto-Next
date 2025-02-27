@@ -1,15 +1,12 @@
-import { LoginForm } from "@/components/login-form"
-import type { Metadata } from "next";
-
-export const metadata: Metadata ={
-  title:"NextAuth - Login",
-}
-
+import LoginForm from "@/components/login-form";
 
 export default function Home() {
   return (
-    <div className="flex h-screen flex-col items-center justify-center bg-slate-800 p-6 md:p-10">
-      <LoginForm />
+    <div className="flex items-center justify-center min-h-screen p-4 bg-background">
+      <div className="w-full max-w-md mx-auto">
+        <h1 className="text-center text-2xl font-bold mb-6">Login</h1>
+        <LoginForm />
+      </div>
     </div>
-  )
+  );
 }
